@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/site.xhtml">
+	
+<ui:define name="title">
+	Guess Number
+</ui:define>
+	
+<ui:define name="content">
+	<div class="col12">
+        <h:form>
+            <h:graphicImage value="#{resource['images/guessnumber:wave.med.gif']}"
+                            alt="Duke waving his hand"/>
+            <h2>
+                <h:outputText id="result" value="#{userNumberBean.response}"/>
+            </h2>
+            <h:commandButton id="back" value="Back" action="guessnumber"/>
+        </h:form>
+    </div>
+        
+    </ui:define>
+</ui:composition>

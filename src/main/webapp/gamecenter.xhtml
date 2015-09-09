@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="content">
+		<div class="row">
+			<div class="col4">
+				<a href="/GameCenter/mines.jsf"><img
+					src="resources/images/mines/mineslogo.png" /><br />Minesweeper [#{ratingController.getRatingOfGame('Minesweeper')}/10]</a>
+			</div>
+			<div class="col4">
+				<a href="/GameCenter/stones.jsf"><img
+					src="resources/images/stones/stoneslogo2.png" /><br />Stones [#{ratingController.getRatingOfGame('Stones')}/10]</a>
+			</div>
+			<div class="col4">
+				<a href="/GameCenter/guessnumber.jsf"><img
+					src="resources/images/guessnumber/guesslogo.png" /><br />Guess
+					Number [#{ratingController.getRatingOfGame('Guess Number')}/10]</a>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col4">
+				<a href="/GameCenter/puzzle.jsf"><img
+					src="resources/images/puzzle/puzzlelogo.png" /><br />Puzzle [#{ratingController.getRatingOfGame('Puzzle')}/10]</a>
+			</div>
+			<div class="col4">
+			</div>
+			<div class="col4">
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

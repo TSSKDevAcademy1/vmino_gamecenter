@@ -1,0 +1,146 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 0.8em;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	text-align: left;
+	background-color: #188CB8;
+	font-size: 0.8em;
+	height: 10%;
+	display: flex;
+	margin-bottom: 2%;
+	padding-top: 1%;
+}
+
+#name {
+	text-align: center;
+	color: #000045;
+	font-size: 3em;
+}
+
+#panel {
+	text-align: center;
+	font-size: 1.5em;
+	background-color: #188CB8;
+	color: #010101;
+	display: flex;
+}
+
+#win {
+	color: #06698F;
+	font-size: 3em;
+}
+
+#lose {
+	color: #DB0909;
+	font-size: 3em;
+}
+
+.button {
+	padding-top: 2%;
+}
+
+#content {
+	min-height: 66%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:4%;
+
+}
+
+#footer {
+	font-size: 1.2em;
+	height: 8%;
+	color: #000047;
+    background:#06698F;
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
+}
+
+#stone, #space {
+	text-align: center;
+	box-align: center;
+	text-decoration: none;
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	border: 1px;
+	text-size: 2em;
+}
+
+a {
+	font-size: 3em;
+	color: #06698F;
+	text-decoration: none;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+a:visited {
+	color: #06698F;
+}
+
+a:hover {
+	color: #06698F;
+}
+
+a:active {
+	color: #06698F;
+}
+
+.row {
+	display: flex;
+}
+
+.col1 {
+	width: 8.33%;
+}
+
+.col2 {
+	width: 16.66%;
+}
+
+.col3 {
+	width: 25%;
+}
+
+.col4 {
+	width: 33.33%;
+}
+
+.col5 {
+	width: 41.66%;
+}
+
+.col6 {
+	width: 50%;
+}
+
+.col7 {
+	width: 58.33%;
+}
+
+.col8 {
+	width: 66.66%;
+}
+
+.col9 {
+	width: 75%;
+}
+
+.col10 {
+	width: 83.33%;
+}
+
+.col11 {
+	width: 91.66%;
+}
+
+.col12 {
+	width: 100%;
+}

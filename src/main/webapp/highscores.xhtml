@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/site.xhtml">
+
+	<ui:define name="title">
+	High Scores
+	</ui:define>
+
+	<ui:define name="controls">
+		<div class="col8"></div>
+		<div class="col4">
+			<a href="/GameCenter/gamecenter.jsf" class="button"><img
+				src="resources/images/buttons/back.png" /></a>
+		</div>
+	</ui:define>
+
+	<ui:define name="content">
+		<div class="row">
+			<div class="col4">
+				Minesweeper
+				<h:dataTable
+					value="#{scoreController.getTopScoreOfGame('Minesweeper')}"
+					var="_score">
+					<h:column>
+						<f:facet name="header">No.</f:facet>
+						#{scoreController.getRow(0)}.
+					</h:column>
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+                		#{_score.user.username}
+                	</h:column>
+					<h:column>
+					<f:facet name="header">Score</f:facet>
+						#{_score.score}
+					</h:column>
+				</h:dataTable>
+			</div>
+			<div class="col4">
+				Stones
+				<h:dataTable value="#{scoreController.getTopScoreOfGame('Stones')}"
+					var="_score" styleClass="simpletablestyle">
+					<h:column>
+						<f:facet name="header">No.</f:facet>
+						#{scoreController.getRow(1)}.
+					</h:column>
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+                		#{_score.user.username}
+            		</h:column>
+					<h:column>
+						<f:facet name="header">Score</f:facet>
+                		#{_score.score}
+            		</h:column>
+				</h:dataTable>
+			</div>
+
+			<div class="col4">
+				Guess Number
+				<h:dataTable
+					value="#{scoreController.getTopScoreOfGame('Guess Number')}"
+					var="_score" styleClass="simpletablestyle">
+					<h:column>
+						<f:facet name="header">No.</f:facet>
+						#{scoreController.getRow(2)}.
+					</h:column>
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+                		#{_score.user.username}
+            		</h:column>
+					<h:column>
+						<f:facet name="header">Score</f:facet>
+                		#{_score.score}
+            		</h:column>
+				</h:dataTable>
+			</div>
+		</div>
+		
+		<br />
+		<div class="row">
+
+			<div class="col4">
+				Puzzle
+				<h:dataTable value="#{scoreController.getTopScoreOfGame('Puzzle')}"
+					var="_score" styleClass="simpletablestyle">
+					<h:column>
+						<f:facet name="header">No.</f:facet>
+						#{scoreController.getRow(3)}.
+					</h:column>
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+                		#{_score.user.username}
+            		</h:column>
+					<h:column>
+						<f:facet name="header">Score</f:facet>
+                		#{_score.score}
+            		</h:column>
+				</h:dataTable>
+			</div>
+		</div>
+	</ui:define>
+
+</ui:composition>

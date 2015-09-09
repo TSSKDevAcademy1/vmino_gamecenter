@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui">
+<h:head>
+	<title>GameCenter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/game.css" />
+</h:head>
+<h:body>
+	<div id="wrapper" align="center">
+
+		<div id="header" class="col12">
+			<div class="col2">
+				<div class="row">
+					<div class="col1"></div>
+					<div class="col11">
+						<a href="/GameCenter/gamecenter.jsf"><img
+							src="resources/images/logo/logosmall2.png" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col8" id="name">
+				<ui:insert name="title">
+				[Title]
+				</ui:insert>
+			</div>
+			<div class="col2">
+				<div class="row">
+					<div class="col4"></div>
+					<div class="col8">
+						<div class="row">
+							<ui:insert name="controls">
+								<div class="col4">
+									<a href="/GameCenter/gamecenter.jsf" class="button"><img
+										src="resources/images/buttons/back.png" /></a>
+
+								</div>
+								<div class="col4">
+									<a href="?new=" class="button"><img
+										src="resources/images/buttons/new.png" /></a>
+								</div>
+								<div class="col4">
+									<a href="?new=" class="button"><img
+										src="resources/images/buttons/settings.png" /></a>
+								</div>
+							</ui:insert>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="content" class="col8">
+			<ui:insert name="content">
+                    [Template content will be inserted here]
+         </ui:insert>
+		</div>
+		
+		<div id="rating" class="col8">
+			<ui:insert name="rating">
+			</ui:insert>
+		</div>
+		
+		<div id="comments" class="col8">
+			<ui:insert name="comments">
+			</ui:insert>
+		</div>
+
+		<div id="footer">
+			<div class="col12">
+				<p><h:outputLabel value="Logged as #{loggedUser.name} | Created by Vladislav Mino" rendered="#{loggedUser.logged}"/>
+				<h:outputLabel value="Created by Vladislav Mino" rendered="#{!loggedUser.logged}"/></p>
+			</div>
+		</div>
+	</div>
+
+</h:body>
+</html>

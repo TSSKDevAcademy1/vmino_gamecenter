@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/site.xhtml">
+	
+	<ui:define name="title">
+	Puzzle
+</ui:define>
+	
+<ui:define name="content">
+	<div class="col12">
+		<o:resourceInclude path="/puzzle" />
+	</div>
+</ui:define>
+
+	<ui:define name="comments">
+		<div class="col12">
+			<!-- PRINT COMMENTS -->
+			Comments: <br />
+			<h:dataTable
+				value="#{commentController.getAllCommentsOfGame('Puzzle')}"
+				rendered="#{not empty commentController.getAllCommentsOfGame('Puzzle')}"
+				var="comment">
+				<h:column>
+				#{comment.user.username}:
+			</h:column>
+				<h:column>
+				#{comment.content}
+			</h:column>
+			</h:dataTable>
+			<h:outputLabel value="No Comments yet..."
+				rendered="#{empty commentController.getAllCommentsOfGame('Puzzle')}" />
+		</div>
+		<br />
+		<div class="row">
+			<div class="col12">
+				<!-- ADD COMMENT -->
+				<h:form rendered="#{loggedUser.logged}">
+				Add Comment: 
+				<h:inputText id="content"
+						value="#{commentController.currentComment}" />
+					<h:message for="content" errorClass="invalid" />
+					<h:commandButton
+						action="#{commentController.addComment('Puzzle', 'puzzle.jsf')}"
+						value="send" />
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:o="http://omnifaces.org/ui"
+	template="/WEB-INF/templates/site.xhtml">
+
+	<ui:define name="title">
+	Registration / Login
+	</ui:define>
+
+	<ui:define name="controls">
+		<div class="col8"></div>
+		<div class="col4">
+			<a href="/GameCenter/gamecenter.jsf" class="button"><img
+				src="resources/images/buttons/back.png" /></a>
+		</div>
+	</ui:define>
+
+	<ui:define name="content">
+		Log in!
+		<h:form>
+			<h:panelGrid columns="3">
+				Username:
+				<h:inputText id="name" value="#{user.username}" />
+				<h:message for="name" errorClass="invalid" />
+				
+				Password:
+				<h:inputSecret id="pass" value="#{user.password}" />
+				<h:message for="pass" errorClass="invalid" />
+
+			</h:panelGrid>
+			<h:commandButton action="#{userController.validateLogin}" value="Login" />
+		</h:form>
+		<br />
+		<br />
+		Don't have an account ? Register now! It's totally free!
+		<h:form>
+			<h:panelGrid columns="3">
+				Username:
+				<h:inputText id="name" value="#{user.username}" />
+				<h:message for="name" errorClass="invalid" />
+	
+				Password:
+				<h:inputSecret id="pass" value="#{user.password}" />
+				<h:message for="pass" errorClass="invalid" />
+
+			</h:panelGrid>
+			<h:commandButton action="#{userController.registerUser}" value="Register" />
+		</h:form>
+	</ui:define>
+</ui:composition>
